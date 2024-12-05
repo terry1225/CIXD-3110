@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two-Part Layout with Sun</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            position: relative;
+        }
+
+        .section {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .left {
+            background-color: #fbd387; /* Orange */
+        }
+
+        .right {
+            background-color: #5459f4; /* Blue */
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            font-size: 18px;
+            color: #333;
+        }
+
+        /* Sun in the center */
+        .sun {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150px;
+            height: 150px;
+            background-color: yellow;
+            border-radius: 50%;
+            box-shadow: 0 0 50px rgba(255, 223, 0, 0.6);
+        }
+
+        .sun::before, .sun::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255,223,0,0.2) 40%, transparent 50%);
+            border-radius: 50%;
+            animation: rotate 10s linear infinite;
+        }
+
+        .sun::before {
+            z-index: -1;
+        }
+
+        .sun::after {
+            width: 250px;
+            height: 250px;
+            animation-direction: reverse;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Stars in the right section */
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+
+        .star1 { width: 5px; height: 5px; top: 20%; left: 20%; }
+        .star2 { width: 8px; height: 8px; top: 50%; left: 80%; }
+        .star3 { width: 4px; height: 4px; top: 30%; left: 60%; }
+        .star4 { width: 6px; height: 6px; top: 80%; left: 40%; }
+        .star5 { width: 7px; height: 7px; top: 70%; left: 10%; }
+
+        /* Birds in the left section */
+        .bird {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: transparent;
+            border-top: 2px solid black;
+            border-radius: 50%;
+            transform: rotate(45deg);
+        }
+
+        .bird1 { top: 20%; left: 30%; transform: rotate(40deg); }
+        .bird2 { top: 40%; left: 50%; transform: rotate(45deg); }
+        .bird3 { top: 30%; left: 70%; transform: rotate(35deg); }
+
+        /* Trees in the left section */
+        .tree {
+            position: absolute;
+            bottom: 10px;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 20px solid green;
+        }
+
+        .tree1 { left: 20%; }
+        .tree2 { left: 40%; }
+        .tree3 { left: 60%; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section left">
+            <h2>Day Schedule</h2>
+            <p>Classes</p>
+            <p>Gym</p>
+            <!-- Birds and Trees in Left Section -->
+            <div class="bird bird1"></div>
+            <div class="bird bird2"></div>
+            <div class="bird bird3"></div>
+            <div class="tree tree1"></div>
+            <div class="tree tree2"></div>
+            <div class="tree tree3"></div>
+        </div>
+        <div class="section right">
+            <h2>Night Schedule</h2>
+            <p>Games</p>
+            <!-- Stars in Right Section -->
+            <div class="star star1"></div>
+            <div class="star star2"></div>
+            <div class="star star3"></div>
+            <div class="star star4"></div>
+            <div class="star star5"></div>
+        </div>
+        <!-- Sun in the center -->
+        <div class="sun"></div>
+    </div>
+</body>
+</html>

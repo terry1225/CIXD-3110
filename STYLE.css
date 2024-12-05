@@ -1,0 +1,44 @@
+body{
+    background-color: grey;
+}
+section{
+
+    .pixel{
+    background: yellow;
+    width: 32px;
+    height: 32px;
+    border: 1px solid white;
+    display: block;
+    transition: all 1s ease-in;
+    &:hover {
+        background: white;
+        transform: scale(3)
+        }
+    }
+    &:active{
+        background: black;
+    }
+}
+section{
+    animation: move 5s linear infinite after alternate-reverse;
+    display: block;
+    .animation{
+        display: block;
+        border: 10px solid blue;
+        transition: all is linear;
+        animation: myAnimation 4s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    }
+
+}
+@keyframes myAnimation {
+    0%{
+    background: black;
+    }
+    50%{
+    background: grey;
+    }
+    100%{
+    background: white;
+    }
+}
