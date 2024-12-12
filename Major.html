@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Project</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: #fff;
+        }
+
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px 20px;
+            z-index: 1000;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #ffdd57;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .button-container { 
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .image-button img {
+        width: 150px; /* Increased width */
+        height: 150px; /* Increased height */
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        border: 2px solid #fff;
+    }
+
+    .image-button span {
+        margin-top: 10px;
+        font-size: 1.2rem; /* Increased font size */
+        font-weight: bold;
+        color: #fff;
+    }
+
+        .image-button:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <header class="sticky-header">
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="final.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="https://netflix.com" target="_blank">Wanna go out watch some netflix show?</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1 class="hero-title">Interaction Design</h1>
+            <div class="button-container">
+                <!-- Your buttons will go here -->
+            </div>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy; Qianmo's Website</p>
+    </footer>
+</body>
+</html>
